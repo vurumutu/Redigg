@@ -1,0 +1,2 @@
+# Redigg
+Reddit/Digg clone.
