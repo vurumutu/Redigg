@@ -1,0 +1,70 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pl-PL" color-scheme="light">
+<head>
+	<title>Vurumutu - homepage</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme" content="dark-theme light-theme">
+	<meta property="og:title" content="Redigg">
+	<meta property="og:description" content="Redigg - share your content!">
+	<meta property="og:image" content="https://vurumutu.github.io/images/favicon_io/android-chrome-512x512.png">
+	<meta property="og:image:secure_url" content="https://vurumutu.github.io/images/favicon_io/android-chrome-512x512.png">
+	<meta property="og:url" content="https://vurumutu.github.io">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="stylesheet" type="text/css" href="{% static 'wholesite_css.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'mainpage.css' %}" />
+	<link rel="icon" type="image/png" sizes="192x192" href="images/favicon_io/android-chrome-192x192.png">
+	<script src="{% static 'modes_automatic.js' %}"></script>
+</head>
+<body>
+	<nav class="site-header">
+		<h3>Reddig</h3>
+			<ul>
+				<li><a class="menubutton active" href="">Welcome</a></li>
+				<li><a class="menubutton" href="">Skills</a></li>
+				<li><a class="menubutton" href="">Projects</a></li>
+				<li><a class="menubutton" href="">Articles</a></li>
+			</ul>
+			<!-- Icons by https://tablericons.com/ -->
+			<button class="btn-mode-toggle light--hidden">			
+			<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="28" height="28" viewBox="0 0 24 24" stroke-width="2.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+			  <path stroke="none" d="M0 0h24v24H0z"/>
+			  <circle cx="12" cy="12" r="4" />
+			  <path d="M3 12h1M12 3v1M20 12h1M12 20v1M5.6 5.6l.7 .7M18.4 5.6l-.7 .7M17.7 17.7l.7 .7M6.3 17.7l-.7 .7" />
+			</svg>
+			</button>
+			<button class="btn-mode-toggle dark--hidden">			
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="28" height="28" viewBox="0 0 24 24" stroke-width="2.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z"/>
+					<path d="M16.2 4a9.03 9.03 0 1 0 3.9 12a6.5 6.5 0 1 1 -3.9 -12" />
+				</svg>
+			</button>
+	 		<script src="{% static 'modes.js' %}"></script>
+	</nav>
+	<div class="content">
+		<section class="">
+			{% for finding in findings_list %}
+				<div class="wrapper">
+					<article class="card">	
+						<div class="card_caption">	
+							<a href="">
+								<h2>{{finding.finding_name}}</h2>
+								<p>{{finding.finding_date}}</p>
+								<p>{{finding.voting_score}}</p>
+							</a>
+						</div>	
+					</article>
+				</div>
+			{% endfor %}
+		</section>
+			<footer>
+				<p>Icons by <a href="https://teenyicons.com/" target="_blank"><url>Teeny Icons.</url></a> Graphics in the welcome section by <a href="https://undraw.co/" target="_blank"><url>unDraw</url></a>.
+				<!-- Icons by https://tablericons.com/ -->
+				<!-- https://devicons.github.io/devicon/ -->
+			</footer>
+		</section>
+	</div>
+</body>
+</html>

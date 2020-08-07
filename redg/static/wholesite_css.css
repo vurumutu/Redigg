@@ -1,0 +1,131 @@
+html, body {
+	font-family: Lato, sans-serif;
+	scroll-behavior: smooth;
+	line-height:1.6;
+	margin:0;
+} 
+
+:root[color-scheme="light"]{
+	--font-weight: 500;
+	--text-color: #FFFFFF;
+	--secondary-text-color: #757575;
+	--dark-primary-color: #0097A7;
+	--light-primary-color: #B2EBF2;
+	--primary-color: #00BCD4;
+	--accent-color: #536DFE;
+	--divider-color: #BDBDBD;
+}
+:root[color-scheme="dark"]{
+	--font-weight: 300;
+	--text-color: #FFFFFF;
+	--secondary-text-color: #757575;
+	--dark-primary-color: #455A64;
+	--light-primary-color: #CFD8DC;
+	--primary-color: #607D8B;
+	--accent-color: #03A9F4;
+	--divider-color: #BDBDBD;
+}
+
+body {
+	font-weight: var(--font-weight);
+	background: var(--primary-color);
+}
+:root[color-scheme="light"] .light--hidden {
+	display: none;
+}
+
+:root[color-scheme="dark"] .dark--hidden {
+	display: none;
+}
+
+h1, h2, h3, h4, h5, h6, p ,a{
+  color: var(--text-color);
+}
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+	--font-weight: 300;
+	--text-color: #FFFFFF;
+	--secondary-text-color: #757575;
+	--dark-primary-color: #455A64;
+	--light-primary-color: #CFD8DC;
+	--primary-color: #607D8B;
+	--accent-color: #03A9F4;
+	--divider-color: #BDBDBD;
+}
+@media (prefers-color-scheme: light) {
+	--font-weight: 500;
+	--text-color: #FFFFFF;
+	--secondary-text-color: #757575;
+	--dark-primary-color: #0097A7;
+	--light-primary-color: #B2EBF2;
+	--primary-color: #00BCD4;
+	--accent-color: #536DFE;
+	--divider-color: #BDBDBD;
+}
+h1, h2, h3, h4, h5, h6{
+	text-align: center;
+	font-size: 2.7vh;
+}
+/* Header stuff */
+.site-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+	width: 100%;
+	height: 7vh;
+	background-color: var(--dark-primary-color);
+	box-shadow: 0 3px 5px rgba(0,0,0,0.24);
+}
+
+.site-header a {
+    transition: all 1000ms ease-in-out;
+   	font-size: 2.7vh;
+}
+
+.site-header h3 {
+	flex:1 3 auto;
+	font-size: 2.5vh;
+}
+
+.site-header ul {
+	list-style-type: none;
+	display: flex; 
+	flex-wrap: nowrap;    
+	justify-content: space-evenly;
+    align-items: stretch;
+    margin:0;
+	flex:1 1 0;
+}
+
+
+.site-header ul li {
+	display: flex;
+	flex:1 1 0;
+}
+
+.site-header li a {
+	display: flex;
+	text-decoration: none;
+	align-items: flex-end;
+	flex:1 1 0;
+}
+
+.site-header li a.active {
+	background-color: var(--accent-color);
+	color: var(--text-color);
+}
+
+.site-header li a:hover:not(.active) {
+  background-color: var(--light-primary-color);
+}
+
+.btn-mode-toggle{
+	background-color: transparent; 
+	border: none;
+}
+
+.content{
+	display: flex;
+    flex-direction: column;
+}
