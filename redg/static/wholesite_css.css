@@ -8,11 +8,11 @@ html, body {
 :root[color-scheme="light"]{
 	--font-weight: 500;
 	--text-color: #FFFFFF;
-	--secondary-text-color: #757575;
-	--dark-primary-color: #0097A7;
-	--light-primary-color: #B2EBF2;
-	--primary-color: #00BCD4;
-	--accent-color: #536DFE;
+	--secondary-text-color: #4383af;
+	--dark-primary-color: #4383af;
+	--light-primary-color: #4383af;
+	--primary-color: white;
+	--accent-color: #4383af;
 	--divider-color: #BDBDBD;
 }
 :root[color-scheme="dark"]{

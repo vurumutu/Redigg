@@ -22,10 +22,7 @@
 	<nav class="site-header">
 		<h3>Reddig</h3>
 			<ul>
-				<li><a class="menubutton active" href="">Welcome</a></li>
-				<li><a class="menubutton" href="">Skills</a></li>
-				<li><a class="menubutton" href="">Projects</a></li>
-				<li><a class="menubutton" href="">Articles</a></li>
+				<li><a class="menubutton active" href="">Main</a></li>
 			</ul>
 			<!-- Icons by https://tablericons.com/ -->
 			<button class="btn-mode-toggle light--hidden">			
@@ -47,14 +44,19 @@
 		<section class="">
 			{% for finding in findings_list %}
 				<div class="wrapper">
-					<article class="card">	
-						<div class="card_caption">	
-							<a href="">
-								<h2>{{finding.finding_name}}</h2>
-								<p>{{finding.finding_date}}</p>
-								<p>{{finding.voting_score}}</p>
-							</a>
-						</div>	
+					<article class="card">
+						<p style="font-size:4vh;">Votes: {{finding.finding_voting_score}}</p>
+						<img src="{{media_url}}{{finding.finding_image}}"></img>
+						<div class="finding_info">
+							<h2>{{finding.finding_name}}</h2>
+								<p><a href="{{finding.finding_url}}">{{finding.finding_url}}</a> Added on: {{finding.finding_date}}</p>
+								<div class="finding_tags">
+									{% for tag in finding.finding_tags.all %}
+	            					<a href="TODO">#{{tag}}</a>
+	        						{% endfor %}
+	    						</div>
+	    						<h2>{{finding.finding_description}}</h2>
+    					</div>
 					</article>
 				</div>
 			{% endfor %}

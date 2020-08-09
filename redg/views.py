@@ -1,6 +1,8 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from django.template import loader
+from django.conf import settings
+
 
 from .models import Comment, CommentThread, Finding
 
@@ -14,6 +16,7 @@ def index(request):
 	template = loader.get_template('finding_page_template.html')
 	context = {
 		'findings_list': findings_list,
+		'media_url':settings.MEDIA_URL,
 	}
 	return HttpResponse(template.render(context, request))
 
